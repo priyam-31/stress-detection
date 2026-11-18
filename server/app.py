@@ -5,7 +5,7 @@ import csv
 import model
 
 import os
-os.chdir(__file__.replace(os.path.basename(__file__), ''))
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 
 app = Flask(__name__, static_folder='../client/build')
@@ -77,4 +77,4 @@ def test_result(num):
     return res
 
 if __name__ == '__main__':
-    app.run(use_reloader=True, host='0.0.0.0', port=80, threaded=True)
+    app.run(use_reloader=True, host='0.0.0.0', port=5000, threaded=True)
